@@ -36,4 +36,3 @@ La maquette de référence utilise Manrope, DM Mono, Playfair Display, un accent
 
 Vérifications effectuées : `npm run build` et `npm run lint`.
 
-Audit Lighthouse et publication Vercel : à effectuer avant la présentation du 30 octobre 2026. Les routes doivent être configurées en réécriture vers `index.html` sur l’hébergement pour que les liens directs vers les pages fonctionnent.
