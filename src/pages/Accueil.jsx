@@ -25,7 +25,7 @@ export default function Accueil({ navigate, language }) {
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.7rem] bg-stone-200 dark:bg-stone-800">
             <img className="h-full w-full scale-[1.08] object-cover object-center origin-center" src={portrait} alt={en ? 'Resia Djonga, React.js developer' : 'Resia Djonga, développeuse React.js'} />
           </div>
-          <div className="relative ml-4 mt-4 w-fit rounded-2xl border border-stone-200 bg-white/95 p-4 shadow-xl dark:border-white/10 dark:bg-stone-900/95"><p className="font-mono text-[10px] text-orange-600 dark:text-orange-400">FRONT-END DEVELOPER</p><p className="mt-1 text-sm font-medium">{en ? 'Creating with intention.' : 'Créer avec intention.'}</p></div>
+          <div className="relative ml-4 mt-4 w-fit rounded-2xl border border-stone-200 bg-white/95 p-4 shadow-xl dark:border-white/10 dark:bg-stone-900/95"><p className="font-mono text-[10px] text-orange-600 dark:text-orange-400">DEVELOPER</p><p className="mt-1 text-sm font-medium">{en ? 'Creating with intention.' : 'Créer avec intention.'}</p></div>
         </div>
       </section>
       <section className="border-y border-stone-200 py-7 dark:border-white/10">
