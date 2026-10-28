@@ -1,6 +1,6 @@
 import portrait from '../assets/resia-portrait.jpeg'
 
-const technologies = ['React.js','Next.js','Vu.js','Nuxt.js', 'JavaScript', 'Tailwind CSS', 'Figma', 'Git']
+const technologies = ['React.js','Next.js','Vu.js','Nuxt.js', 'JavaScript', 'Tailwind CSS', 'Figma', 'Git', 'Github']
 
 export default function Accueil({ navigate, language }) {
   const en = language === 'en'
