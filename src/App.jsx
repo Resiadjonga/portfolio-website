@@ -4,6 +4,7 @@ import Accueil from './pages/Accueil'
 import Competences from './pages/Competences'
 import Contact from './pages/Contact'
 import Confidentialite from './pages/Confidentialite'
+import Faq from './pages/Faq'
 import { usePathname } from './hooks/usePathname'
 import { useTheme } from './hooks/useTheme'
 import { useLanguage } from './hooks/useLanguage'
@@ -18,6 +19,7 @@ export default function App() {
     '/competences': <Competences language={language} />,
     '/contact': <Contact language={language} />,
     '/confidentialite': <Confidentialite language={language} />,
+    '/faq': <Faq language={language} />,
   }
   const page = pages[pathname] || pages['/']
 

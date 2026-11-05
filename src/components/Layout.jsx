@@ -9,6 +9,7 @@ export default function Layout({ children, pathname, navigate, theme, toggleThem
     { path: '/apropos', label: isEnglish ? 'About' : 'À propos' },
     { path: '/competences', label: isEnglish ? 'Skills' : 'Compétences' },
     { path: '/contact', label: isEnglish ? 'Contact' : 'Contact' },
+    { path: '/faq', label: 'FAQ' },
   ]
   const go = (event, path) => {
     event.preventDefault()
