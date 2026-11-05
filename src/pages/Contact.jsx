@@ -6,8 +6,11 @@ const gmailComposeUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=resiadjon
 export default function Contact({ language }) {
   const en = language === 'en'
   const [emailPrepared, setEmailPrepared] = useState(false)
+  const [isPreparingEmail, setIsPreparingEmail] = useState(false)
   const handleProjectSubmit = (event) => {
     event.preventDefault()
+    if (isPreparingEmail) return
+    setIsPreparingEmail(true)
     const formData = new FormData(event.currentTarget)
     const name = formData.get('name')
     const email = formData.get('email')
@@ -18,7 +21,10 @@ export default function Contact({ language }) {
       : `Nom : ${name}\nE-mail : ${email}\n\nDescription du projet :\n${project}`
     const params = new URLSearchParams({ view: 'cm', fs: '1', to: 'resiadjonga20@gmail.com', su: subject, body })
     window.open(`https://mail.google.com/mail/?${params.toString()}`, '_blank', 'noopener,noreferrer')
-    setEmailPrepared(true)
+    window.setTimeout(() => {
+      setIsPreparingEmail(false)
+      setEmailPrepared(true)
+    }, 500)
   }
 
   return (
@@ -44,7 +50,7 @@ export default function Contact({ language }) {
           </div>
           <label className="grid gap-2 text-sm font-medium" htmlFor="project-description">{en ? 'What would you like to build?' : 'Quel projet souhaitez-vous réaliser ?'}<textarea id="project-description" name="project" rows="5" placeholder={en ? 'Briefly describe your project, goals, and timeline…' : 'Décrivez brièvement votre projet, vos objectifs et vos délais…'} required className="resize-y rounded-xl border border-stone-300 bg-white px-4 py-3 font-normal leading-6 outline-none transition focus:border-orange-600 dark:border-white/15 dark:bg-white/[.04] dark:focus:border-orange-400" /></label>
           <div>
-            <button type="submit" className="inline-flex rounded-full bg-orange-600 px-7 py-4 text-sm font-semibold text-white transition hover:bg-orange-700">{en ? 'Prepare email' : 'M’envoyer le projet'} <span className="ml-4" aria-hidden="true">↗</span></button>
+            <button type="submit" disabled={isPreparingEmail} aria-busy={isPreparingEmail} className="inline-flex items-center rounded-full bg-orange-600 px-7 py-4 text-sm font-semibold text-white transition hover:bg-orange-700 disabled:cursor-wait disabled:opacity-70">{isPreparingEmail ? (en ? 'Preparing…' : 'Préparation…') : (en ? 'Prepare email' : 'M’envoyer le projet')} {isPreparingEmail ? <span aria-hidden="true" className="ml-4 size-4 animate-spin rounded-full border-2 border-white/40 border-t-white" /> : <span className="ml-4" aria-hidden="true">↗</span>}</button>
             <p className="mt-3 text-xs leading-5 text-stone-500 dark:text-stone-400">{en ? 'Gmail will open with a draft for you to review and send.' : 'Gmail s’ouvrira avec un brouillon que vous pourrez relire et envoyer.'}</p>
             {emailPrepared && <p className="mt-3 rounded-xl border border-green-600/30 bg-green-600/10 px-4 py-3 text-sm text-green-800 dark:text-green-300" role="status">{en ? 'Your email draft is ready in a new tab. Review it and send it when you’re ready.' : 'Votre brouillon est prêt dans un nouvel onglet. Vous pouvez le relire et l’envoyer quand vous le souhaitez.'}</p>}
           </div>
