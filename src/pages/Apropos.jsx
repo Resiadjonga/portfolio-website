@@ -10,6 +10,7 @@ export default function Apropos({ language }) {
         <img src={workPhoto} alt={en ? 'Resia Djonga working at her desk' : 'Resia Djonga au travail dans son bureau'} className="aspect-[4/3] w-full rounded-3xl object-cover" />
         <div className="space-y-6 text-base leading-8 text-stone-600 dark:text-stone-300">
           <p>{en ? 'As developer, I like understanding the full picture and bringing intuitive interfaces to life.' : 'Développeuse, j’aime comprendre un besoin dans son ensemble et donner vie à des interfaces intuitives.'}</p>
+          <p>{en ? 'I am a student at PrimeTek, where I am developing my skills in IT and web development. Curious and motivated, I enjoy learning new technologies and applying them to real-world projects.' : 'Je suis étudiante chez PrimeTek, où je développe mes compétences en informatique et en développement web. Curieuse et motivée, j’aime apprendre de nouvelles technologies et les mettre en pratique dans des projets concrets.'}</p>
           <p>{en ? 'I combine technical rigor, creativity and attention to detail to build reliable, scalable web experiences.' : 'Je combine exigence technique, créativité et sens du détail pour construire des expériences web fiables et évolutives.'}</p>
           <p>{en ? 'Based in Kinshasa, I welcome remote collaborations and projects with a meaningful impact.' : 'Basée à Kinshasa, je suis ouverte aux collaborations à distance et aux projets qui ont un impact concret.'}</p>
           <div className="grid grid-cols-3 gap-4 border-t border-stone-200 pt-6 dark:border-white/10">

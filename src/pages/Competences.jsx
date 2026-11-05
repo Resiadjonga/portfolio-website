@@ -1,16 +1,9 @@
 import SectionTitle from '../components/SectionTitle'
+import { skillCategories } from '../data/portfolio'
 
 export default function Competences({ language }) {
   const en = language === 'en'
-  const skills = en ? [
-    ['01', 'Front-end', 'React, Next.js, Vue.js, Nuxt.js, Tailwind CSS, boostrap, JavaScript ES6+, HTML5, CSS3', 'Build accessible, responsive interfaces that are enjoyable to use.'],
-    ['02', 'Back-end', 'Currently learning', 'Develop server-side foundations and data integration skills.'],
-    ['03', 'Tools', 'Git, GitHub, Figma, Vite', 'Collaborate effectively and evolve projects with care.'],
-  ] : [
-    ['01', 'Front-end', 'React, Next.js, Vue.js, Nuxt.js, Tailwind CSS, boostrap, JavaScript ES6+, HTML5, CSS3', 'Créer des interfaces accessibles, responsives et agréables à utiliser.'],
-    ['02', 'Back-end', 'En cours d’apprentissage', 'Approfondir les bases côté serveur et la connexion aux données.'],
-    ['03', 'Outils', 'Git, GitHub, Figma, Vite', 'Collaborer efficacement et faire évoluer les projets avec méthode.'],
-  ]
+  const skills = en ? skillCategories.en : skillCategories.fr
   return (
     <div>
       <SectionTitle title={en ? <>From concept<br /><em className="font-accent text-orange-600 dark:text-orange-400">to interface.</em></> : <>Du concept<br /><em className="font-accent text-orange-600 dark:text-orange-400">à l’interface.</em></>}>{en ? 'I use modern technologies to build fast, accessible and maintainable experiences.' : 'J’utilise des technologies modernes pour créer des expériences rapides, accessibles et maintenables.'}</SectionTitle>
