@@ -14,7 +14,7 @@ export default function ProjectsSection({ language }) {
         <p className="max-w-xl text-sm leading-6 text-stone-600 dark:text-stone-300">{en ? 'Interfaces designed to answer real needs, with care given to the experience.' : 'Des interfaces pensées pour répondre à de vrais besoins, avec une attention particulière à l’expérience.'}</p>
       </div>
       <div className="grid gap-5 md:grid-cols-3">
-        {projectList.map(({ number, category, name, description, technologies }) => (
+        {projectList.map(({ number, category, name, description }) => (
           <article key={name} className="group flex h-full flex-col rounded-3xl border border-stone-200 bg-white/70 p-6 transition-colors hover:border-orange-600/50 dark:border-white/10 dark:bg-white/[.03] dark:hover:border-orange-400/50">
             <div className="mb-8 flex items-center justify-between">
               <span className="font-mono text-xs text-orange-600 dark:text-orange-400">{number}</span>
@@ -23,9 +23,6 @@ export default function ProjectsSection({ language }) {
             <p className="font-mono text-[10px] uppercase tracking-[.16em] text-stone-500">{category}</p>
             <h3 className="mt-2 font-display text-2xl font-semibold">{name}</h3>
             <p className="mt-3 flex-1 text-sm leading-6 text-stone-600 dark:text-stone-300">{description}</p>
-            <ul className="mt-6 flex flex-wrap gap-2" aria-label={en ? `${name} technologies` : `Technologies de ${name}`}>
-              {technologies.map((technology) => <li key={technology} className="rounded-full bg-stone-100 px-3 py-1.5 font-mono text-[10px] text-stone-600 dark:bg-white/10 dark:text-stone-300">{technology}</li>)}
-            </ul>
           </article>
         ))}
       </div>

@@ -27,7 +27,7 @@ La section Front-end présente les technologies nommées dans le retour de forma
 | --- | --- | --- |
 | Navigation | Les sections sont accessibles par quatre routes dédiées au lieu d’une seule longue page. | Les pages Accueil, À propos, Compétences et Contact ont été demandées pour le passage au code. |
 | Accueil | La navigation conserve quatre pages dédiées ; la maquette présente une page unique avec des sections. | La structure existante du site a été conservée. |
-| Projets | Une section est intégrée à l’accueil, mais elle ne contient pas encore de liens vers des démos ou dépôts de code. | Les trois noms et descriptions proviennent de la maquette et doivent être confirmés comme réalisations de Resia avant publication. |
+| Projets | Une section avec quatre projets est intégrée à l’accueil, sans liens vers des démos ou dépôts de code. | Les descriptions sont résumées à partir des titres fournis par Resia ; les technologies et l’état d’avancement restent à préciser. |
 | À propos | Le texte PrimeTek a été ajouté et le contenu a été adapté en français et anglais. | Le parcours de formation a été ajouté à la demande de Resia ; les deux langues nécessitent un contenu dédié. |
 | Compétences | Les compétences sont présentées en lignes de texte plutôt qu’en cartes extensibles comme dans la maquette. | La version actuelle privilégie une présentation compacte ; JavaScript est conservé dans Front-end, TypeScript n’étant pas utilisé par Resia. |
 | Contact | La page affiche l’adresse, la localisation et trois liens sociaux avec icônes ; la maquette présente un bouton e-mail et des liens sociaux en pied de page. | Les coordonnées et icônes ont été ajoutées à la demande de Resia. |
