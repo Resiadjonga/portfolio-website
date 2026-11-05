@@ -26,13 +26,16 @@ La section Front-end présente les technologies nommées dans le retour de forma
 | Élément | Écart | Raison |
 | --- | --- | --- |
 | Navigation | Les sections sont accessibles par quatre routes dédiées au lieu d’une seule longue page. | Les pages Accueil, À propos, Compétences et Contact ont été demandées pour le passage au code. |
-| Projets | La section Projets de la maquette n’est pas encore une page du site. | Le périmètre confirmé pour cette version contient quatre pages. |
-| Présentation | Le contenu a été adapté en français et anglais et certaines descriptions ont été réécrites. | Les deux langues et des pages autonomes nécessitent du contenu dédié. |
+| Accueil | La navigation conserve quatre pages dédiées ; la maquette présente une page unique avec des sections. | La structure existante du site a été conservée. |
+| Projets | Une section est intégrée à l’accueil, mais elle ne contient pas encore de liens vers des démos ou dépôts de code. | Les trois noms et descriptions proviennent de la maquette et doivent être confirmés comme réalisations de Resia avant publication. |
+| À propos | Le texte PrimeTek a été ajouté et le contenu a été adapté en français et anglais. | Le parcours de formation a été ajouté à la demande de Resia ; les deux langues nécessitent un contenu dédié. |
+| Compétences | Les compétences sont présentées en lignes de texte plutôt qu’en cartes extensibles comme dans la maquette. | La version actuelle privilégie une présentation compacte ; JavaScript est conservé dans Front-end, TypeScript n’étant pas utilisé par Resia. |
+| Contact | La page affiche l’adresse, la localisation et trois liens sociaux avec icônes ; la maquette présente un bouton e-mail et des liens sociaux en pied de page. | Les coordonnées et icônes ont été ajoutées à la demande de Resia. |
 | Animations | Les effets décoratifs de la maquette ne sont pas tous repris ; les transitions sont discrètes. | Préserver la fluidité, notamment sur téléphone, et respecter la préférence de réduction des mouvements. |
 
 La maquette de référence utilise Manrope, DM Mono, Playfair Display, un accent bleu et des fonds bleu nuit / bleu clair. Les styles du site reprennent maintenant cette palette et ces polices.
 
 ## Vérification et publication
 
-Vérifications effectuées : `npm run build` et `npm run lint`.
+Vérifications effectuées : `npm run build`, `npm run lint` et `npm test`. L’audit Lighthouse reste à effectuer.
 

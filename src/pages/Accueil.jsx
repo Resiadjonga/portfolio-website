@@ -1,5 +1,6 @@
 import portrait from '../assets/resia-portrait.jpeg'
 import { technologies } from '../data/portfolio'
+import ProjectsSection from '../components/ProjectsSection'
 
 export default function Accueil({ navigate, language }) {
   const en = language === 'en'
@@ -15,7 +16,7 @@ export default function Accueil({ navigate, language }) {
           <h1 className="font-display text-6xl font-semibold leading-[.98] tracking-tight sm:text-8xl">Resia<br /><em className="font-accent font-normal text-orange-600 dark:text-orange-400">Djonga.</em></h1>
           <p className="mt-7 max-w-xl text-lg leading-8 text-stone-600 dark:text-stone-300">{en ? 'Developer, I turn ambitious ideas into high-performing web experiences.' : 'Développeuse, je transforme des idées ambitieuses en expériences web performantes.'}</p>
           <div className="mt-9 flex flex-wrap items-center gap-5">
-            <button onClick={() => navigate('/competences')} className="rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700">{en ? 'Explore my skills' : 'Découvrir mes compétences'} <span className="ml-2">↗</span></button>
+            <button onClick={() => document.getElementById('projets')?.scrollIntoView({ behavior: 'smooth' })} className="rounded-full bg-orange-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-orange-700">{en ? 'Explore my projects' : 'Découvrir mes projets'} <span className="ml-2">↗</span></button>
             <button onClick={() => navigate('/apropos')} className="text-sm font-medium text-stone-700 underline decoration-stone-400 underline-offset-4 hover:text-orange-600 dark:text-stone-200">{en ? 'Learn more' : 'En savoir plus'}</button>
           </div>
         </div>
@@ -31,6 +32,7 @@ export default function Accueil({ navigate, language }) {
         <p className="mb-5 font-mono text-[10px] uppercase tracking-[.2em] text-stone-500">{en ? 'Technologies & tools' : 'Technologies & outils'}</p>
         <div className="flex flex-wrap gap-x-10 gap-y-4">{technologies.map((technology) => <span key={technology} className="font-display text-xl text-stone-600 dark:text-stone-300">{technology}</span>)}</div>
       </section>
+      <ProjectsSection language={language} />
       <section className="grid gap-8 rounded-3xl bg-[#e8ecf5] p-7 sm:grid-cols-3 sm:p-10 dark:bg-[#111827]">
         {highlights.map(([number, title, description]) => <article key={number}><span className="font-mono text-xs text-orange-600 dark:text-orange-400">{number}</span><h2 className="mt-4 font-display text-xl">{title}</h2><p className="mt-2 text-sm text-stone-600 dark:text-stone-400">{description}</p></article>)}
       </section>
