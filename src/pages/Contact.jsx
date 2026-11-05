@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import SectionTitle from '../components/SectionTitle'
 import { socialLinks } from '../data/socialLinks'
 
 const gmailComposeUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=resiadjonga20%40gmail.com'
 export default function Contact({ language }) {
   const en = language === 'en'
+  const [emailPrepared, setEmailPrepared] = useState(false)
   const handleProjectSubmit = (event) => {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
@@ -15,7 +17,8 @@ export default function Contact({ language }) {
       ? `Name: ${name}\nEmail: ${email}\n\nProject details:\n${project}`
       : `Nom : ${name}\nE-mail : ${email}\n\nDescription du projet :\n${project}`
     const params = new URLSearchParams({ view: 'cm', fs: '1', to: 'resiadjonga20@gmail.com', su: subject, body })
-    window.location.assign(`https://mail.google.com/mail/?${params.toString()}`)
+    window.open(`https://mail.google.com/mail/?${params.toString()}`, '_blank', 'noopener,noreferrer')
+    setEmailPrepared(true)
   }
 
   return (
@@ -43,6 +46,7 @@ export default function Contact({ language }) {
           <div>
             <button type="submit" className="inline-flex rounded-full bg-orange-600 px-7 py-4 text-sm font-semibold text-white transition hover:bg-orange-700">{en ? 'Prepare email' : 'M’envoyer le projet'} <span className="ml-4" aria-hidden="true">↗</span></button>
             <p className="mt-3 text-xs leading-5 text-stone-500 dark:text-stone-400">{en ? 'Gmail will open with a draft for you to review and send.' : 'Gmail s’ouvrira avec un brouillon que vous pourrez relire et envoyer.'}</p>
+            {emailPrepared && <p className="mt-3 rounded-xl border border-green-600/30 bg-green-600/10 px-4 py-3 text-sm text-green-800 dark:text-green-300" role="status">{en ? 'Your email draft is ready in a new tab. Review it and send it when you’re ready.' : 'Votre brouillon est prêt dans un nouvel onglet. Vous pouvez le relire et l’envoyer quand vous le souhaitez.'}</p>}
           </div>
         </form>
       </section>
